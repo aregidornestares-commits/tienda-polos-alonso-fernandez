@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Alonso Fernández - Polos españoles de calidad premium. Tradición, elegancia y maestría artesanal.">
-    <meta name="keywords" content="polos españoles, ropa de calidad, polos clásicos, moda española">
+    <meta name="keywords" content="polos españoles, polos clásicos, moda española premium">
     <title>Alonso Fernández - Polos Españoles Premium</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%232d5a2d' width='100' height='100'/><text x='50' y='70' font-size='60' font-weight='bold' fill='white' text-anchor='middle'>AF</text></svg>">
     <script src="https://js.stripe.com/v3/"></script>
@@ -16,13 +16,13 @@
         }
 
         :root {
-            --verde-espanol: #2d5a2d;
-            --verde-claro: #4a8a4a;
+            --verde-oscuro: #2d5a2d;
+            --dorado: #c9a961;
+            --crema: #f5f3f0;
             --blanco: #ffffff;
-            --gris-claro: #f5f5f5;
-            --gris-oscuro: #333333;
-            --dorado: #d4af37;
-            --sombra: 0 4px 15px rgba(45, 90, 45, 0.1);
+            --gris-texto: #5a5a5a;
+            --negro: #1a1a1a;
+            --gris-claro: #d4d4d4;
         }
 
         html {
@@ -31,25 +31,24 @@
 
         body {
             font-family: 'Georgia', 'Garamond', serif;
-            background-color: var(--gris-claro);
-            color: var(--gris-oscuro);
-            line-height: 1.6;
+            background-color: var(--crema);
+            color: var(--gris-texto);
+            line-height: 1.8;
         }
 
         /* ===== HEADER ===== */
         header {
             background: var(--blanco);
-            border-bottom: 3px solid var(--verde-espanol);
+            border-bottom: 1px solid #e0dbd5;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--sombra);
+            padding: 1.5rem 2rem;
         }
 
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -58,64 +57,55 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.8rem;
             text-decoration: none;
-            color: var(--verde-espanol);
+            color: var(--negro);
         }
 
         .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--verde-espanol) 0%, var(--verde-claro) 100%);
-            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            background: var(--verde-oscuro);
+            border-radius: 2px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--blanco);
             font-weight: bold;
-            font-size: 24px;
-            letter-spacing: 2px;
+            font-size: 18px;
+            letter-spacing: 1px;
         }
 
         .logo-text h1 {
-            font-size: 24px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 400;
             letter-spacing: 3px;
-            margin: 0;
-        }
-
-        .logo-text p {
-            font-size: 11px;
-            color: var(--verde-claro);
-            letter-spacing: 2px;
-            text-transform: uppercase;
             margin: 0;
         }
 
         nav {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             align-items: center;
         }
 
         nav a {
-            color: var(--gris-oscuro);
+            color: var(--gris-texto);
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 1px;
+            font-size: 12px;
+            letter-spacing: 1.5px;
             transition: color 0.3s ease;
             text-transform: uppercase;
         }
 
         nav a:hover {
-            color: var(--verde-espanol);
+            color: var(--dorado);
         }
 
         .cart-icon {
             position: relative;
             cursor: pointer;
-            font-size: 20px;
+            font-size: 18px;
             transition: transform 0.3s ease;
         }
 
@@ -128,106 +118,241 @@
             top: -8px;
             right: -12px;
             background: var(--dorado);
-            color: var(--verde-espanol);
-            width: 22px;
-            height: 22px;
+            color: var(--verde-oscuro);
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: bold;
         }
 
         /* ===== HERO ===== */
         .hero {
-            background: linear-gradient(135deg, var(--verde-espanol) 0%, var(--verde-claro) 100%);
-            color: var(--blanco);
-            padding: 6rem 2rem;
+            background: var(--blanco);
+            padding: 3rem 2rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+        .hero-subtitle {
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--dorado);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
         }
 
         .hero h1 {
-            font-size: 56px;
-            margin-bottom: 1rem;
+            font-size: 64px;
+            font-weight: 400;
             letter-spacing: 2px;
-            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--negro);
+        }
+
+        .hero-image {
+            width: 280px;
+            height: 280px;
+            margin: 2rem auto;
+            background: linear-gradient(135deg, #e8ddd0 0%, #d4c8bb 100%);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-divider {
+            width: 100px;
+            height: 1px;
+            background: var(--dorado);
+            margin: 1.5rem auto;
+            position: relative;
+        }
+
+        .hero-divider::before,
+        .hero-divider::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--dorado);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .hero-divider::before {
+            left: -12px;
+        }
+
+        .hero-divider::after {
+            right: -12px;
         }
 
         .hero p {
-            font-size: 20px;
-            margin-bottom: 2rem;
+            font-size: 14px;
+            letter-spacing: 2px;
             font-style: italic;
-            opacity: 0.95;
+            color: var(--dorado);
+            margin-bottom: 2rem;
         }
 
-        .hero-button {
-            background: var(--dorado);
-            color: var(--verde-espanol);
-            border: none;
-            padding: 14px 40px;
-            font-size: 16px;
-            font-weight: 700;
-            border-radius: 0;
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            background: var(--verde-oscuro);
+            color: var(--blanco);
+            border: 2px solid var(--verde-oscuro);
+            padding: 12px 30px;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
             cursor: pointer;
-            letter-spacing: 2px;
             transition: all 0.3s ease;
             text-transform: uppercase;
         }
 
-        .hero-button:hover {
-            background: var(--blanco);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--verde-oscuro);
         }
 
-        /* ===== SECCIÓN HISTORIA ===== */
+        .btn-outline {
+            background: transparent;
+            color: var(--negro);
+            border: 2px solid var(--negro);
+            padding: 12px 30px;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-outline:hover {
+            background: var(--negro);
+            color: var(--blanco);
+        }
+
+        /* ===== DESCUBRIR ===== */
+        .descubrir-section {
+            background: var(--blanco);
+            padding: 1.5rem;
+            text-align: center;
+            border-top: 1px solid #e0dbd5;
+        }
+
+        .descubrir-text {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--dorado);
+            text-transform: uppercase;
+        }
+
+        /* ===== HISTORIA ===== */
         .historia {
             background: var(--blanco);
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 4rem 2rem;
         }
 
-        .historia h2 {
-            font-size: 40px;
-            color: var(--verde-espanol);
-            margin-bottom: 2rem;
+        .historia-header {
+            max-width: 1000px;
+            margin: 0 auto 3rem;
             text-align: center;
+        }
+
+        .historia-subtitle {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--dorado);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .historia-header h2 {
+            font-size: 44px;
+            font-weight: 400;
             letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            color: var(--negro);
+        }
+
+        .historia-header .divider {
+            width: 80px;
+            height: 1px;
+            background: var(--dorado);
+            margin: 1.5rem auto;
+            position: relative;
+        }
+
+        .historia-header .divider::before,
+        .historia-header .divider::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--dorado);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .historia-header .divider::before {
+            left: -12px;
+        }
+
+        .historia-header .divider::after {
+            right: -12px;
         }
 
         .historia-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
             align-items: center;
         }
 
+        .historia-imagen {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e8ddd0 0%, #d4c8bb 100%);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .historia-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .historia-texto {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.8;
-            color: #555;
+            color: var(--gris-texto);
         }
 
         .historia-texto p {
@@ -235,178 +360,18 @@
             text-align: justify;
         }
 
-        .historia-imagen {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, var(--verde-claro) 0%, var(--verde-espanol) 100%);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--blanco);
-            font-size: 18px;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        /* ===== COLECCIONES ===== */
-        .colecciones {
-            padding: 5rem 2rem;
-            background: var(--gris-claro);
-        }
-
-        .colecciones-header {
-            max-width: 1200px;
-            margin: 0 auto 3rem;
-            text-align: center;
-        }
-
-        .colecciones-header h2 {
-            font-size: 40px;
-            color: var(--verde-espanol);
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .colecciones-header p {
+        .historia-quote {
             font-size: 16px;
-            color: #666;
-        }
-
-        .grid-colecciones {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .producto-card {
-            background: var(--blanco);
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: var(--sombra);
-            transition: all 0.3s ease;
-        }
-
-        .producto-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 30px rgba(45, 90, 45, 0.15);
-        }
-
-        .producto-imagen {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #e8e8e8 0%, #d0d0d0 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 16px;
-            text-align: center;
-            padding: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .producto-imagen.verde {
-            background: linear-gradient(135deg, #4a8a4a 0%, #2d5a2d 100%);
-            color: var(--blanco);
-        }
-
-        .producto-imagen.azul {
-            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
-            color: var(--blanco);
-        }
-
-        .producto-info {
-            padding: 1.5rem;
-        }
-
-        .producto-coleccion {
-            color: var(--verde-claro);
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .producto-nombre {
-            font-size: 22px;
-            color: var(--verde-espanol);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .producto-descripcion {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-
-        .producto-precio {
-            font-size: 28px;
-            color: var(--verde-espanol);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .tallas {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .talla-btn {
-            flex: 1;
-            padding: 8px;
-            border: 2px solid var(--verde-espanol);
-            background: var(--blanco);
-            color: var(--verde-espanol);
-            cursor: pointer;
-            font-weight: 600;
-            border-radius: 3px;
-            transition: all 0.3s ease;
-            font-size: 13px;
-        }
-
-        .talla-btn.activa {
-            background: var(--verde-espanol);
-            color: var(--blanco);
-        }
-
-        .talla-btn:hover {
-            background: var(--verde-claro);
-            color: var(--blanco);
-            border-color: var(--verde-claro);
-        }
-
-        .agregar-carrito {
-            width: 100%;
-            padding: 12px;
-            background: var(--verde-espanol);
-            color: var(--blanco);
-            border: none;
-            border-radius: 3px;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-
-        .agregar-carrito:hover {
-            background: var(--verde-claro);
-            transform: scale(1.02);
+            font-style: italic;
+            color: var(--gris-texto);
+            margin: 2rem 0;
+            line-height: 1.8;
         }
 
         /* ===== VALORES ===== */
         .valores {
-            background: var(--blanco);
-            padding: 5rem 2rem;
+            background: var(--crema);
+            padding: 4rem 2rem;
         }
 
         .valores-header {
@@ -416,10 +381,38 @@
         }
 
         .valores-header h2 {
-            font-size: 40px;
-            color: var(--verde-espanol);
-            margin-bottom: 1rem;
+            font-size: 44px;
+            font-weight: 400;
             letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            color: var(--negro);
+        }
+
+        .valores-header .divider {
+            width: 80px;
+            height: 1px;
+            background: var(--dorado);
+            margin: 1.5rem auto;
+            position: relative;
+        }
+
+        .valores-header .divider::before,
+        .valores-header .divider::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--dorado);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .valores-header .divider::before {
+            left: -12px;
+        }
+
+        .valores-header .divider::after {
+            right: -12px;
         }
 
         .grid-valores {
@@ -433,25 +426,190 @@
         .valor-card {
             text-align: center;
             padding: 2rem;
-            border-top: 4px solid var(--verde-espanol);
+            border: 1px solid #e0dbd5;
+            background: var(--blanco);
         }
 
-        .valor-icono {
-            font-size: 48px;
+        .valor-numero {
+            font-size: 36px;
+            color: var(--gris-claro);
+            font-weight: 300;
             margin-bottom: 1rem;
         }
 
         .valor-card h3 {
-            font-size: 20px;
-            color: var(--verde-espanol);
+            font-size: 18px;
+            color: var(--negro);
             margin-bottom: 1rem;
-            letter-spacing: 1px;
+            font-weight: 400;
         }
 
         .valor-card p {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.6;
+            font-size: 14px;
+            color: var(--gris-texto);
+            line-height: 1.7;
+        }
+
+        /* ===== COLECCIONES ===== */
+        .colecciones {
+            padding: 4rem 2rem;
+            background: var(--blanco);
+        }
+
+        .colecciones-header {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .colecciones-header h2 {
+            font-size: 44px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            color: var(--negro);
+        }
+
+        .colecciones-header .divider {
+            width: 80px;
+            height: 1px;
+            background: var(--dorado);
+            margin: 1.5rem auto;
+            position: relative;
+        }
+
+        .colecciones-header .divider::before,
+        .colecciones-header .divider::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--dorado);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .colecciones-header .divider::before {
+            left: -12px;
+        }
+
+        .colecciones-header .divider::after {
+            right: -12px;
+        }
+
+        .colecciones-header p {
+            font-size: 14px;
+            color: var(--gris-texto);
+        }
+
+        .grid-colecciones {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .producto-card {
+            background: var(--crema);
+            border-radius: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .producto-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .producto-numero {
+            font-size: 48px;
+            color: var(--gris-claro);
+            font-weight: 300;
+            padding: 1rem 0 0;
+        }
+
+        .producto-imagen {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #e8ddd0 0%, #d4c8bb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .producto-imagen img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+
+        .producto-info {
+            padding: 1.5rem;
+        }
+
+        .producto-nombre {
+            font-size: 16px;
+            color: var(--negro);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .producto-descripcion {
+            font-size: 13px;
+            color: var(--gris-texto);
+            margin-bottom: 1rem;
+        }
+
+        .producto-precio {
+            font-size: 18px;
+            color: var(--negro);
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .colores-disponibles {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .color-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1px solid #999;
+            cursor: pointer;
+        }
+
+        .color-info {
+            font-size: 12px;
+            color: var(--gris-texto);
+            margin-bottom: 1rem;
+        }
+
+        .agregar-carrito {
+            width: 100%;
+            padding: 12px;
+            background: var(--verde-oscuro);
+            color: var(--blanco);
+            border: none;
+            border-radius: 0;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .agregar-carrito:hover {
+            background: transparent;
+            color: var(--verde-oscuro);
+            border: 2px solid var(--verde-oscuro);
         }
 
         /* ===== CARRITO MODAL ===== */
@@ -462,7 +620,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.6);
             z-index: 2000;
             align-items: center;
             justify-content: flex-end;
@@ -480,45 +638,35 @@
             display: flex;
             flex-direction: column;
             animation: slideIn 0.3s ease-out;
-            box-shadow: -5px 0 20px rgba(0,0,0,0.2);
         }
 
         @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(0);
-            }
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
         }
 
         .carrito-header {
             padding: 2rem;
-            border-bottom: 2px solid var(--gris-claro);
+            border-bottom: 1px solid #e0dbd5;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: var(--verde-espanol);
+            background: var(--verde-oscuro);
             color: var(--blanco);
         }
 
         .carrito-title {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 1px;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 2px;
         }
 
         .close-btn {
             background: none;
             border: none;
             color: var(--blanco);
-            font-size: 28px;
+            font-size: 24px;
             cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .close-btn:hover {
-            transform: scale(1.2);
         }
 
         .carrito-items {
@@ -528,53 +676,49 @@
         }
 
         .carrito-item {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 1rem;
-            padding: 1rem;
-            border-bottom: 1px solid var(--gris-claro);
+            padding: 1.5rem;
+            border-bottom: 1px solid #e0dbd5;
             margin-bottom: 1rem;
         }
 
         .item-detalles h4 {
-            font-size: 16px;
-            color: var(--verde-espanol);
+            font-size: 13px;
+            color: var(--negro);
             margin-bottom: 0.5rem;
         }
 
         .item-detalles p {
-            font-size: 13px;
-            color: #666;
+            font-size: 12px;
+            color: var(--gris-texto);
             margin-bottom: 0.5rem;
         }
 
         .cantidad-control {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.8rem;
             margin-bottom: 0.5rem;
         }
 
         .cantidad-btn {
-            background: var(--gris-claro);
+            background: #f0f0f0;
             border: none;
             width: 24px;
             height: 24px;
             cursor: pointer;
             font-weight: bold;
-            border-radius: 3px;
             transition: background 0.2s;
         }
 
         .cantidad-btn:hover {
-            background: var(--verde-claro);
+            background: var(--verde-oscuro);
             color: var(--blanco);
         }
 
         .item-precio {
-            font-weight: 700;
-            color: var(--verde-espanol);
-            font-size: 16px;
+            font-weight: 400;
+            color: var(--verde-oscuro);
+            font-size: 13px;
         }
 
         .eliminar-btn {
@@ -582,7 +726,7 @@
             border: none;
             color: #d32f2f;
             cursor: pointer;
-            font-size: 12px;
+            font-size: 11px;
             text-decoration: underline;
             margin-top: 0.5rem;
         }
@@ -595,272 +739,232 @@
 
         .carrito-footer {
             padding: 1.5rem;
-            border-top: 2px solid var(--gris-claro);
-            background: var(--gris-claro);
+            border-top: 1px solid #e0dbd5;
+            background: var(--crema);
         }
 
         .carrito-total {
             display: flex;
             justify-content: space-between;
             margin-bottom: 1rem;
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--verde-espanol);
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--verde-oscuro);
         }
 
         .checkout-btn {
             width: 100%;
-            background: var(--verde-espanol);
+            background: var(--verde-oscuro);
             color: var(--blanco);
             border: none;
-            padding: 14px;
-            border-radius: 3px;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 1px;
+            padding: 12px;
+            border-radius: 0;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
             cursor: pointer;
             transition: background 0.3s;
             text-transform: uppercase;
         }
 
         .checkout-btn:hover {
-            background: var(--verde-claro);
+            background: transparent;
+            color: var(--verde-oscuro);
+            border: 2px solid var(--verde-oscuro);
         }
 
-        .checkout-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
+        /* ===== CONTACTO ===== */
+        .contacto {
+            background: var(--crema);
+            padding: 4rem 2rem;
         }
 
-        /* ===== CHECKOUT MODAL ===== */
-        .checkout-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 3000;
+        .contacto-header {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .contacto-header h2 {
+            font-size: 44px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            color: var(--negro);
+        }
+
+        .contacto-header .divider {
+            width: 80px;
+            height: 1px;
+            background: var(--dorado);
+            margin: 1.5rem auto;
+            position: relative;
+        }
+
+        .contacto-header .divider::before,
+        .contacto-header .divider::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--dorado);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .contacto-header .divider::before {
+            left: -12px;
+        }
+
+        .contacto-header .divider::after {
+            right: -12px;
+        }
+
+        .contacto-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contacto-info h3 {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--negro);
+        }
+
+        .info-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #e0dbd5;
+            display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
         }
 
-        .checkout-modal.activo {
-            display: flex;
-        }
-
-        .checkout-box {
-            background: var(--blanco);
-            border-radius: 4px;
-            padding: 2rem;
-            max-width: 500px;
-            width: 95%;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .checkout-title {
-            font-size: 28px;
-            color: var(--verde-espanol);
-            margin-bottom: 1.5rem;
+        .info-item h4 {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--gris-texto);
+            text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-item p {
+            font-size: 14px;
+            color: var(--negro);
+        }
+
+        .contacto-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
         }
 
         .form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--verde-espanol);
-            letter-spacing: 1px;
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--gris-texto);
             text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
         }
 
         .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            font-size: 14px;
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid #e0dbd5;
+            border-radius: 0;
             font-family: inherit;
-            transition: border-color 0.3s;
+            font-size: 13px;
+            background: var(--blanco);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
         }
 
         .form-group input:focus,
-        .form-group select:focus {
+        .form-group textarea:focus {
             outline: none;
-            border-color: var(--verde-espanol);
-            box-shadow: 0 0 0 3px rgba(45, 90, 45, 0.1);
+            border-color: var(--verde-oscuro);
+            box-shadow: inset 0 0 0 2px rgba(45, 90, 45, 0.1);
         }
 
-        #card-element {
-            padding: 10px 12px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-        }
-
-        .stripe-error {
-            color: #d32f2f;
-            font-size: 13px;
-            margin-top: 0.5rem;
-        }
-
-        .checkout-actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .cancel-btn {
-            flex: 1;
-            background: var(--gris-claro);
-            border: 1px solid #ddd;
+        .enviar-btn {
+            background: var(--verde-oscuro);
+            color: var(--blanco);
+            border: none;
             padding: 12px;
-            border-radius: 3px;
-            font-size: 13px;
-            font-weight: 700;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
             cursor: pointer;
             transition: all 0.3s;
             text-transform: uppercase;
         }
 
-        .cancel-btn:hover {
-            background: #e0e0e0;
-        }
-
-        .pay-btn {
-            flex: 1;
-            background: var(--verde-espanol);
-            color: var(--blanco);
-            border: none;
-            padding: 12px;
-            border-radius: 3px;
-            font-size: 13px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.3s;
-            text-transform: uppercase;
-        }
-
-        .pay-btn:hover {
-            background: var(--verde-claro);
-        }
-
-        .pay-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
+        .enviar-btn:hover {
+            background: transparent;
+            color: var(--verde-oscuro);
+            border: 2px solid var(--verde-oscuro);
         }
 
         /* ===== FOOTER ===== */
         footer {
-            background: var(--verde-espanol);
+            background: var(--negro);
             color: var(--blanco);
-            padding: 3rem 2rem;
-            margin-top: 3rem;
+            padding: 2rem;
+            text-align: center;
         }
 
-        .footer-container {
+        .footer-content {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-col h3 {
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--dorado);
-            padding-bottom: 0.5rem;
-        }
-
-        .footer-col a {
-            display: block;
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 14px;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .footer-col a:hover {
-            color: var(--dorado);
-        }
-
-        .footer-col p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
-            line-height: 1.8;
-        }
-
-        .redes-sociales {
             display: flex;
-            gap: 1rem;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
         }
 
-        .redes-sociales a {
-            display: inline-flex;
-            width: 40px;
-            height: 40px;
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-logo-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--dorado);
+            border-radius: 2px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-
-        .redes-sociales a:hover {
-            background: var(--dorado);
-            color: var(--verde-espanol);
+            color: var(--negro);
+            font-size: 12px;
+            font-weight: bold;
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 2rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 13px;
-        }
-
-        /* ===== NOTIFICACIONES ===== */
-        .success-message {
-            display: none;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #4caf50;
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 4px;
-            z-index: 4000;
-            animation: slideInRight 0.3s ease-out;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .success-message.show {
-            display: block;
-        }
-
-        @keyframes slideInRight {
-            from {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+            color: rgba(255, 255, 255, 0.6);
         }
 
         /* ===== RESPONSIVE ===== */
@@ -868,26 +972,21 @@
             .header-container {
                 flex-direction: column;
                 gap: 1rem;
-                padding: 1rem;
             }
 
             nav {
-                width: 100%;
-                justify-content: center;
                 flex-wrap: wrap;
                 gap: 1rem;
-            }
-
-            nav a {
-                font-size: 12px;
+                font-size: 11px;
             }
 
             .hero h1 {
-                font-size: 36px;
+                font-size: 42px;
             }
 
-            .hero p {
-                font-size: 16px;
+            .hero-image {
+                width: 200px;
+                height: 200px;
             }
 
             .historia-content {
@@ -895,15 +994,20 @@
             }
 
             .historia-imagen {
-                height: 250px;
+                height: 300px;
+            }
+
+            .contacto-content {
+                grid-template-columns: 1fr;
             }
 
             .carrito-content {
                 max-width: 100%;
             }
 
-            .checkout-box {
-                width: 90%;
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     </style>
@@ -915,15 +1019,12 @@
             <a href="#inicio" class="logo">
                 <div class="logo-icon">AF</div>
                 <div class="logo-text">
-                    <h1>ALONSO FERNÁNDEZ</h1>
-                    <p>Polos Españoles Premium</p>
+                    <h1>Alonso Fernández</h1>
                 </div>
             </a>
             <nav>
                 <a href="#inicio">Inicio</a>
                 <a href="#colecciones">Colecciones</a>
-                <a href="#historia">Historia</a>
-                <a href="#valores">Valores</a>
                 <a href="#contacto">Contacto</a>
                 <div class="cart-icon" id="cartIcon">
                     🛍️
@@ -935,26 +1036,64 @@
 
     <!-- HERO SECTION -->
     <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h1>ALONSO FERNÁNDEZ</h1>
-            <p>Tradición, Elegancia y Maestría Artesanal</p>
-            <button class="hero-button" onclick="document.getElementById('colecciones').scrollIntoView({behavior: 'smooth'})">Explorar Colecciones</button>
+        <div class="hero-subtitle">Clase que Perdura</div>
+        <h1>Alonso Fernández</h1>
+        <div class="hero-image">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23e8ddd0' width='300' height='300'/%3E%3Ctext x='150' y='150' font-size='24' fill='%23999' text-anchor='middle' dy='.3em'%3EImagen Hero%3C/text%3E%3C/svg%3E" alt="Hero">
+        </div>
+        <div class="hero-divider"></div>
+        <p>Polos Españoles de Calidad Premium</p>
+        <div class="hero-buttons">
+            <button class="btn-primary" onclick="document.getElementById('colecciones').scrollIntoView({behavior: 'smooth'})">Ver Colecciones</button>
+            <button class="btn-outline" onclick="document.getElementById('historia').scrollIntoView({behavior: 'smooth'})">Nuestra Historia</button>
         </div>
     </section>
 
+    <div class="descubrir-section">
+        <p class="descubrir-text">Descubrir</p>
+    </div>
+
     <!-- HISTORIA -->
     <section class="historia" id="historia">
-        <h2>La Historia de Alonso Fernández</h2>
+        <div class="historia-header">
+            <div class="historia-subtitle">Nuestra Historia</div>
+            <h2>El origen de una tradición</h2>
+            <div class="divider"></div>
+        </div>
         <div class="historia-content">
-            <div class="historia-texto">
-                <p>En el corazón de la tradición textil española nace <strong>Alonso Fernández</strong>, una marca que honra el legado de un maestro artesano del siglo XX.</p>
-                <p>Don Alonso Fernández, sastre de profesión, dedicó más de 50 años a perfeccionar su oficio. Con cada puntada, con cada corte, llevaba consigo una filosofía: crear prendas que resistieran el paso del tiempo, que hablaran de calidad sin necesidad de gritar.</p>
-                <p>Hoy, su nombre representa el compromiso con la excelencia, con el diseño clásico que nunca pasa de moda, y con la convicción de que la ropa bien hecha es una inversión en el propio bienestar.</p>
-                <p>Cada polo que llevas es más que una prenda: es la manifestación de una tradición española de calidad, elegancia y maestría.</p>
-            </div>
             <div class="historia-imagen">
-                📸 Imagen de la Historia
-                <br><small style="font-size: 12px; margin-top: 1rem;">Sube aquí la foto del taller o una imagen clásica española</small>
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23d4c8bb' width='400' height='400'/%3E%3Ctext x='200' y='200' font-size='18' fill='%23999' text-anchor='middle' dy='.3em'%3EImagen Historia%3C/text%3E%3C/svg%3E" alt="Historia">
+            </div>
+            <div class="historia-texto">
+                <p class="historia-quote">"Nació de la convicción de que la elegancia verdadera no caduca."</p>
+                <p>En el corazón de Madrid, en el año 2008, un maestro de tercera generación decidió que el polo clásico merecía la misma atención que un traje de ceremonia. Así nació Alonso Fernández: una marca fundada sobre el respeto por los materiales nobles, el corte preciso y la sobriedad que distingue a quienes no necesitan gritar para ser escuchados.</p>
+                <p>Cada polo lleva el nombre de una ciudad española que encarna un carácter propio: la solemnidad de Córdoba, la prestancia de Madrid, la brisa atlántica de Sanxenxo, la piedra milenaria de Cáceres. Son prendas que hablan de lugares y de personas que saben quiénes son.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALORES -->
+    <section class="valores">
+        <div class="valores-header">
+            <h2>Cuatro ciudades. Una sola clase.</h2>
+            <div class="divider"></div>
+            <p>Temporada Actual</p>
+        </div>
+        <div class="grid-valores">
+            <div class="valor-card">
+                <div class="valor-numero">I</div>
+                <h3>Materia Prima</h3>
+                <p>Seleccionamos algodón piqué de las mejores fincas europeas. Cada hilo es elegido con la misma exigencia que se aplica al resultado final.</p>
+            </div>
+            <div class="valor-card">
+                <div class="valor-numero">II</div>
+                <h3>Corte Clásico</h3>
+                <p>El patrón de Alonso Fernández no sigue tendencias. Sigue al cuerpo del hombre que viste con conciencia, con una silueta que permanece en el tiempo.</p>
+            </div>
+            <div class="valor-card">
+                <div class="valor-numero">III</div>
+                <h3>Detalle Inimitable</h3>
+                <p>Los botones de nácar, las costuras reforzadas y el acabado interior son la firma invisible de quien sabe que la calidad se siente antes de verse.</p>
             </div>
         </div>
     </section>
@@ -962,40 +1101,12 @@
     <!-- COLECCIONES -->
     <section class="colecciones" id="colecciones">
         <div class="colecciones-header">
-            <h2>Nuestras Colecciones</h2>
-            <p>Diseño clásico español, calidad premium en cada detalle</p>
+            <h2>Colecciones</h2>
+            <div class="divider"></div>
+            <p>Cuatro ciudades españolas. Cuatro caracteres distintos. Una sola exigencia: la calidad que no caduca.</p>
         </div>
         <div class="grid-colecciones" id="productosGrid">
             <!-- Los productos se cargan dinámicamente -->
-        </div>
-    </section>
-
-    <!-- VALORES -->
-    <section class="valores" id="valores">
-        <div class="valores-header">
-            <h2>Nuestros Valores</h2>
-        </div>
-        <div class="grid-valores">
-            <div class="valor-card">
-                <div class="valor-icono">🇪🇸</div>
-                <h3>100% Español</h3>
-                <p>Diseñado y confeccionado con orgullo en España, respetando la tradición textil de calidad que nos caracteriza.</p>
-            </div>
-            <div class="valor-card">
-                <div class="valor-icono">✨</div>
-                <h3>Calidad Premium</h3>
-                <p>Cada prenda es elaborada con los mejores materiales y técnicas tradicionales para garantizar durabilidad y confort.</p>
-            </div>
-            <div class="valor-card">
-                <div class="valor-icono">🎨</div>
-                <h3>Diseño Clásico</h3>
-                <p>Un estilo elegante y atemporal que trasciende las tendencias, perfecto para cualquier ocasión.</p>
-            </div>
-            <div class="valor-card">
-                <div class="valor-icono">🤝</div>
-                <h3>Compromiso Duradero</h3>
-                <p>Nos comprometemos con la satisfacción de nuestros clientes y la calidad que perdura en el tiempo.</p>
-            </div>
         </div>
     </section>
 
@@ -1003,11 +1114,11 @@
     <div class="carrito-modal" id="carritoModal">
         <div class="carrito-content">
             <div class="carrito-header">
-                <h3 class="carrito-title">Mi Carrito</h3>
+                <h3 class="carrito-title">Su Carrito</h3>
                 <button class="close-btn" onclick="cerrarCarrito()">✕</button>
             </div>
             <div class="carrito-items" id="carritoItems">
-                <div class="empty-cart">Tu carrito está vacío</div>
+                <div class="empty-cart">Su carrito está vacío</div>
             </div>
             <div class="carrito-footer">
                 <div class="carrito-total">
@@ -1019,170 +1130,114 @@
         </div>
     </div>
 
-    <!-- CHECKOUT MODAL -->
-    <div class="checkout-modal" id="checkoutModal">
-        <div class="checkout-box">
-            <h2 class="checkout-title">Finalizar Compra</h2>
-            <form id="checkoutForm">
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+        <div class="contacto-header">
+            <h2>Estamos a su disposición</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="contacto-content">
+            <div class="contacto-info">
+                <h3>Álvaro Regidor Nestares</h3>
+                <p>Director Comercial de Alonso Fernández. Para consultas sobre pedidos, tallas especiales, pedidos corporativos o cualquier asunto relacionado con nuestras colecciones, no dude en ponerse en contacto.</p>
+                
+                <div class="info-item">
+                    <div class="info-icon">☎️</div>
+                    <div>
+                        <h4>Teléfono</h4>
+                        <p>+34 912 345 678</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">✉️</div>
+                    <div>
+                        <h4>Correo</h4>
+                        <p>info@alonsofernandez.es</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <h4>Dirección</h4>
+                        <p>Calle Serrano 48, 28001 Madrid</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contacto-form" onsubmit="enviarContacto(event)">
                 <div class="form-group">
-                    <label>Nombre Completo</label>
-                    <input type="text" id="fullName" required placeholder="Juan García López">
+                    <label>Nombre</label>
+                    <input type="text" required placeholder="Su nombre completo">
                 </div>
                 <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" id="email" required placeholder="juan@ejemplo.com">
+                    <label>Correo Electrónico</label>
+                    <input type="email" required placeholder="su@correo.com">
                 </div>
                 <div class="form-group">
-                    <label>Teléfono</label>
-                    <input type="tel" id="phone" required placeholder="+34 612 345 678">
+                    <label>Mensaje</label>
+                    <textarea required placeholder="Escriba su consulta..."></textarea>
                 </div>
-                <div class="form-group">
-                    <label>Dirección</label>
-                    <input type="text" id="address" required placeholder="Calle Principal 123">
-                </div>
-                <div class="form-group">
-                    <label>Ciudad</label>
-                    <input type="text" id="city" required placeholder="Madrid">
-                </div>
-                <div class="form-group">
-                    <label>Código Postal</label>
-                    <input type="text" id="postal" required placeholder="28001">
-                </div>
-                <div class="form-group">
-                    <label>País</label>
-                    <select id="country" required>
-                        <option value="">Selecciona un país</option>
-                        <option value="ES">España</option>
-                        <option value="FR">Francia</option>
-                        <option value="IT">Italia</option>
-                        <option value="PT">Portugal</option>
-                        <option value="DE">Alemania</option>
-                        <option value="GB">Reino Unido</option>
-                        <option value="Other">Otro</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Datos de Tarjeta</label>
-                    <div id="card-element"></div>
-                    <div id="card-errors" class="stripe-error"></div>
-                </div>
-                <div class="checkout-actions">
-                    <button type="button" class="cancel-btn" onclick="cerrarCheckout()">Cancelar</button>
-                    <button type="submit" class="pay-btn" id="submitBtn">Pagar €0.00</button>
-                </div>
+                <button type="submit" class="enviar-btn">Enviar Mensaje</button>
             </form>
         </div>
-    </div>
-
-    <!-- SUCCESS MESSAGE -->
-    <div class="success-message" id="successMessage">
-        ✓ ¡Compra realizada exitosamente! Gracias por tu confianza.
-    </div>
+    </section>
 
     <!-- FOOTER -->
-    <footer id="contacto">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>Sobre Nosotros</h3>
-                <p>Alonso Fernández es una marca que honra la tradición textil española y el compromiso con la calidad que perdura en el tiempo.</p>
-            </div>
-            <div class="footer-col">
-                <h3>Contacto</h3>
-                <p>📧 info@alonsofernandez.es</p>
-                <p>📞 +34 912 345 678</p>
-                <p>📍 Madrid, España</p>
-            </div>
-            <div class="footer-col">
-                <h3>Síguenos</h3>
-                <div class="redes-sociales">
-                    <a href="#" title="Instagram">📷</a>
-                    <a href="#" title="Facebook">f</a>
-                    <a href="#" title="Twitter">𝕏</a>
-                    <a href="#" title="LinkedIn">in</a>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="footer-logo-icon">AF</div>
+                <div>
+                    <p>Alonso Fernández</p>
+                    <p style="font-size: 10px; opacity: 0.6;">Clase que perdura</p>
                 </div>
             </div>
-            <div class="footer-col">
-                <h3>Legal</h3>
-                <a href="#">Términos y Condiciones</a>
-                <a href="#">Política de Privacidad</a>
-                <a href="#">Política de Devoluciones</a>
-                <a href="#">Aviso Legal</a>
+            <div class="footer-bottom">
+                <p>© 2026 Sr. Alonso Fernández. Madrid, España</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2026 Alonso Fernández. Todos los derechos reservados. Hecho con 🇪🇸 en España.</p>
         </div>
     </footer>
 
     <script>
-        // ===== CONFIGURACIÓN STRIPE =====
-        const STRIPE_PUBLIC_KEY = 'pk_test_51234567890abcdefghijklmnop';
-        let stripe = null;
-        let elements = null;
-        let cardElement = null;
-
-        // Función para inicializar Stripe (cuando tengas tu clave real)
-        function initStripe() {
-            if (STRIPE_PUBLIC_KEY === 'pk_test_51234567890abcdefghijklmnop') {
-                console.log('⚠️ Usar clave Stripe de prueba. Reemplaza STRIPE_PUBLIC_KEY con tu clave real.');
-                return;
-            }
-            stripe = Stripe(STRIPE_PUBLIC_KEY);
-            elements = stripe.elements();
-            cardElement = elements.create('card');
-            cardElement.mount('#card-element');
-
-            cardElement.addEventListener('change', function(event) {
-                const displayError = document.getElementById('card-errors');
-                if (event.error) {
-                    displayError.textContent = event.error.message;
-                } else {
-                    displayError.textContent = '';
-                }
-            });
-        }
-
         // ===== DATOS DE PRODUCTOS =====
         const productos = [
             {
                 id: 1,
-                nombre: 'Polo Verde Clásico',
-                coleccion: 'Colección Heritage',
-                descripcion: '100% algodón premium, corte clásico español',
-                precio: 49.99,
-                imagen: 'verde',
-                tallas: [42, 44],
-                color: 'Verde Tradicional'
+                nombre: 'Córdoba',
+                descripcion: 'La solemnidad del sur',
+                precio: 89,
+                numero: 'I',
+                colores: ['#2d5a2d'],
+                imagen: 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22%3E%3Crect fill=%22%232d5a2d%22 width=%22200%22 height=%22200%22/%3E%3C/svg%3E'
             },
             {
                 id: 2,
-                nombre: 'Polo Azul Marino',
-                coleccion: 'Colección Heritage',
-                descripcion: '100% algodón premium, corte clásico español',
-                precio: 49.99,
-                imagen: 'azul',
-                tallas: [42, 44],
-                color: 'Azul Marino'
+                nombre: 'Madrid',
+                descripcion: 'La prestancia de la capital',
+                precio: 95,
+                numero: 'II',
+                colores: ['#f5f5f5'],
+                imagen: 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22%3E%3Crect fill=%22%23f5f5f5%22 width=%22200%22 height=%22200%22/%3E%3C/svg%3E'
             },
             {
                 id: 3,
-                nombre: 'Polo Verde Elegante',
-                coleccion: 'Colección Elegancia',
-                descripcion: '100% algodón premium, detalle sofisticado',
-                precio: 59.99,
-                imagen: 'verde',
-                tallas: [42, 44],
-                color: 'Verde Elegancia'
+                nombre: 'Sanxenxo',
+                descripcion: 'La brisa atlántica del norte',
+                precio: 92,
+                numero: 'III',
+                colores: ['#1e3a8a'],
+                imagen: 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22%3E%3Crect fill=%22%231e3a8a%22 width=%22200%22 height=%22200%22/%3E%3C/svg%3E'
             },
             {
                 id: 4,
-                nombre: 'Polo Azul Sofisticado',
-                coleccion: 'Colección Elegancia',
-                descripcion: '100% algodón premium, detalle sofisticado',
-                precio: 59.99,
-                imagen: 'azul',
-                tallas: [42, 44],
-                color: 'Azul Sofisticado'
+                nombre: 'Cáceres',
+                descripcion: 'La piedra milenaria',
+                precio: 98,
+                numero: 'IV',
+                colores: ['#b39d7f', '#2d5a2d'],
+                imagen: 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22%3E%3Crect fill=%22%23b39d7f%22 width=%22200%22 height=%22200%22/%3E%3C/svg%3E'
             }
         ];
 
@@ -1193,51 +1248,37 @@
             const grid = document.getElementById('productosGrid');
             grid.innerHTML = productos.map(producto => `
                 <div class="producto-card">
-                    <div class="producto-imagen ${producto.imagen}">
-                        ${producto.color}
+                    <div class="producto-numero">${producto.numero}</div>
+                    <div class="producto-imagen">
+                        <img src="${producto.imagen}" alt="${producto.nombre}">
                     </div>
                     <div class="producto-info">
-                        <div class="producto-coleccion">${producto.coleccion}</div>
                         <div class="producto-nombre">${producto.nombre}</div>
                         <div class="producto-descripcion">${producto.descripcion}</div>
-                        <div class="producto-precio">€${producto.precio.toFixed(2)}</div>
-                        <div class="tallas">
-                            ${producto.tallas.map(talla => `
-                                <button class="talla-btn activa" data-talla="${talla}" onclick="seleccionarTalla(this)">
-                                    ${talla}
-                                </button>
+                        <div class="producto-precio">€${producto.precio}</div>
+                        <div class="colores-disponibles">
+                            ${producto.colores.map((color, idx) => `
+                                <div class="color-dot" style="background: ${color};" title="Color ${idx + 1}"></div>
                             `).join('')}
                         </div>
-                        <button class="agregar-carrito" onclick="agregarAlCarrito(${producto.id})">
-                            Agregar al Carrito
-                        </button>
+                        <div class="color-info">${producto.colores.length} colores</div>
+                        <button class="agregar-carrito" onclick="agregarAlCarrito(${producto.id})">Agregar al Carrito</button>
                     </div>
                 </div>
             `).join('');
         }
 
-        function seleccionarTalla(btn) {
-            const tallas = btn.parentElement.querySelectorAll('.talla-btn');
-            tallas.forEach(t => t.classList.remove('activa'));
-            btn.classList.add('activa');
-        }
-
         function agregarAlCarrito(productoId) {
             const producto = productos.find(p => p.id === productoId);
-            const tallaSeleccionada = document.querySelector(`[data-talla]`).textContent;
-            
             if (!producto) return;
 
-            const itemExistente = carrito.find(
-                item => item.id === productoId && item.talla === tallaSeleccionada
-            );
+            const itemExistente = carrito.find(item => item.id === productoId);
 
             if (itemExistente) {
                 itemExistente.cantidad++;
             } else {
                 carrito.push({
                     ...producto,
-                    talla: tallaSeleccionada,
                     cantidad: 1
                 });
             }
@@ -1260,54 +1301,49 @@
             const carritoItems = document.getElementById('carritoItems');
 
             if (carrito.length === 0) {
-                carritoItems.innerHTML = '<div class="empty-cart">Tu carrito está vacío</div>';
+                carritoItems.innerHTML = '<div class="empty-cart">Su carrito está vacío</div>';
                 document.getElementById('checkoutBtn').disabled = true;
                 return;
             }
 
             document.getElementById('checkoutBtn').disabled = false;
-            carritoItems.innerHTML = carrito.map(item => `
+            carritoItems.innerHTML = carrito.map((item, idx) => `
                 <div class="carrito-item">
                     <div class="item-detalles">
                         <h4>${item.nombre}</h4>
-                        <p>Talla: ${item.talla}</p>
-                        <p>€${item.precio.toFixed(2)} c/u</p>
+                        <p>€${item.precio} c/u</p>
                         <div class="cantidad-control">
-                            <button class="cantidad-btn" onclick="cambiarCantidad(${item.id}, ${item.talla}, ${item.cantidad - 1})">−</button>
+                            <button class="cantidad-btn" onclick="cambiarCantidad(${idx}, ${item.cantidad - 1})">−</button>
                             <span style="min-width: 20px; text-align: center;">${item.cantidad}</span>
-                            <button class="cantidad-btn" onclick="cambiarCantidad(${item.id}, ${item.talla}, ${item.cantidad + 1})">+</button>
+                            <button class="cantidad-btn" onclick="cambiarCantidad(${idx}, ${item.cantidad + 1})">+</button>
                         </div>
                     </div>
                     <div>
                         <div class="item-precio">€${(item.precio * item.cantidad).toFixed(2)}</div>
-                        <button class="eliminar-btn" onclick="eliminarDelCarrito(${item.id}, ${item.talla})">Eliminar</button>
+                        <button class="eliminar-btn" onclick="eliminarDelCarrito(${idx})">Eliminar</button>
                     </div>
                 </div>
             `).join('');
         }
 
-        function cambiarCantidad(productoId, talla, nuevaCantidad) {
+        function cambiarCantidad(idx, nuevaCantidad) {
             if (nuevaCantidad <= 0) {
-                eliminarDelCarrito(productoId, talla);
+                eliminarDelCarrito(idx);
                 return;
             }
-
-            const item = carrito.find(i => i.id === productoId && i.talla === talla);
-            if (item) {
-                item.cantidad = nuevaCantidad;
-                actualizarCarrito();
-            }
+            carrito[idx].cantidad = nuevaCantidad;
+            actualizarCarrito();
         }
 
-        function eliminarDelCarrito(productoId, talla) {
-            carrito = carrito.filter(item => !(item.id === productoId && item.talla === talla));
+        function eliminarDelCarrito(idx) {
+            carrito.splice(idx, 1);
             actualizarCarrito();
         }
 
         function actualizarPrecioTotal() {
             const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
             document.getElementById('totalCarrito').textContent = `€${total.toFixed(2)}`;
-            document.getElementById('submitBtn').textContent = `Pagar €${total.toFixed(2)}`;
+            document.getElementById('checkoutBtn').textContent = `Pagar €${total.toFixed(2)}`;
         }
 
         function abrirCarrito() {
@@ -1320,73 +1356,22 @@
 
         function abrirCheckout() {
             if (carrito.length === 0) return;
+            alert('Compra finalizada. Gracias por su confianza en Alonso Fernández.');
+            carrito = [];
+            actualizarCarrito();
             cerrarCarrito();
-            document.getElementById('checkoutModal').classList.add('activo');
-            initStripe();
         }
 
-        function cerrarCheckout() {
-            document.getElementById('checkoutModal').classList.remove('activo');
-        }
-
-        // ===== PROCESAMIENTO DE PAGO =====
-        document.getElementById('checkoutForm').addEventListener('submit', async function(e) {
+        function enviarContacto(e) {
             e.preventDefault();
-
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Procesando...';
-
-            const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
-
-            try {
-                // Para demostración sin Stripe real
-                if (!cardElement) {
-                    // Simular pago exitoso
-                    mostrarMensajeExito();
-                    carrito = [];
-                    actualizarCarrito();
-                    cerrarCheckout();
-                    document.getElementById('checkoutForm').reset();
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = `Pagar €${total.toFixed(2)}`;
-                    return;
-                }
-
-                // Con Stripe real (cuando configures tu clave)
-                const {token} = await stripe.createToken(cardElement);
-                if (token) {
-                    mostrarMensajeExito();
-                    carrito = [];
-                    actualizarCarrito();
-                    cerrarCheckout();
-                    document.getElementById('checkoutForm').reset();
-                } else {
-                    alert('Error al procesar el pago');
-                }
-            } catch (error) {
-                alert('Error: ' + error.message);
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = `Pagar €${total.toFixed(2)}`;
-            }
-        });
-
-        function mostrarMensajeExito() {
-            const msg = document.getElementById('successMessage');
-            msg.classList.add('show');
-            setTimeout(() => {
-                msg.classList.remove('show');
-            }, 5000);
+            alert('Gracias por su mensaje. Nos pondremos en contacto pronto.');
+            e.target.reset();
         }
 
         // ===== EVENT LISTENERS =====
         document.getElementById('cartIcon').addEventListener('click', abrirCarrito);
         document.getElementById('carritoModal').addEventListener('click', function(e) {
             if (e.target === this) cerrarCarrito();
-        });
-        document.getElementById('checkoutModal').addEventListener('click', function(e) {
-            if (e.target === this) cerrarCheckout();
         });
 
         // ===== INICIALIZACIÓN =====
